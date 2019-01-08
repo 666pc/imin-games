@@ -1,1 +1,1 @@
-# mini-games
+# open source
