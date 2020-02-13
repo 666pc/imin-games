@@ -1,0 +1,16 @@
+一、Mysql 条件查询时大小写不敏感
+1、查询时加 binary
+select * from my_user where binary name="username";
+2、修改表结构或建表的时候注意
+ create table some_table(
+   str char(20) binary 
+)
+
+解释：
+    对于CHAR、VARCHAR和TEXT类型，BINARY属性可以为列分配该列字符集的 校对规则。BINARY属性是指定列字符集的二元 校对规则的简写。排序和比较基于数值字符值。因此也就自然区分了大小写。
+二、日期变更
+1、指定日期前一天/后一天
+date_sub('2016-08-01',interval 1 day) 表示 2016-07-31
+date_sub('2016-08-01',interval 0 day) 表示 2016-08-01
+date_sub('2016-08-01',interval -1 day) 表示 2016-08-02
+2、指定日期前一个月/后一个月和前一年/后一年与上面相似，把day改为month/year即可
