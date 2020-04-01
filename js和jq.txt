@@ -48,3 +48,6 @@ $("ul li").slice(1, 4); // 选取第2 ~ 4个元素
 $("ul li").filter(":even"); // 选取ul li中所有奇数顺序的元素
 三、滑动到指定位置
 $('html,body').animate({scrollTop: $("selector").offset().top - 20}, 200);
+四、删除数组
+arr.splice(1,1);	//删除数组,会重置索引，第一个参数为索引，第二个参数为删除多少个
+delete arr[2];  //arr[2]会变成undefined
